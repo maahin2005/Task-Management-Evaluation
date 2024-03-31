@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function TodoItem({ status, description, title, id, render, setRender }) {
+function TodoItem({ status, description, title, id, render, setRender, date }) {
   const handleNavigation = useNavigate("");
 
   const handleEdit = () => {
@@ -38,6 +38,7 @@ function TodoItem({ status, description, title, id, render, setRender }) {
       <Text color="purple.500" fontWeight={600}>
         Status: {status ? "Completed" : "Pending"}
       </Text>
+      <Text>Created At: {date}</Text>
       <Flex justifyContent="center" gap={3} mt={2}>
         <Button onClick={handleEdit}>Edit</Button>
         <Button onClick={handleView}>View</Button>

@@ -15,7 +15,7 @@ const initialState = {
   title: "",
   description: "",
   status: false,
-  date: Date.now(),
+  date: new Date(),
 };
 
 const reducer = (state, { type, payload }) => {
