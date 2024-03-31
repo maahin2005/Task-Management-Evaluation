@@ -33,7 +33,10 @@ const reducer = (state, { type, payload }) => {
 
 function Create() {
   const handleNavigation = useNavigate("");
-  const [formData, dispatch] = useReducer(reducer, initialState);
+  const [formData, dispatch] = useReducer(reducer, {
+    ...initialState,
+    id: Math.ceil(Math.random() * 100000), // Generate a unique id
+  });
 
   const makePostRequest = async () => {
     try {
